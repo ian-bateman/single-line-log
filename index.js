@@ -23,13 +23,15 @@ module.exports = function(stream) {
 		str = '';
 		var nextStr = Array.prototype.join.call(arguments, ' ');
 
+		/* This is aids.
 		// Clear screen
 		for (var i=0; i<prevLineCount; i++) {
 			str += MOVE_LEFT + CLEAR_LINE + (i < prevLineCount-1 ? MOVE_UP : '');
 		}
+		*/
 
 		// Actual log output
-		str += nextStr;
+		str += nextStr + "\n";
 		stream.write(str);
 
 		// How many lines to remove on next clear screen
